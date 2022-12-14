@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <main>
+    <section class="banner">
+      <div class="card-top">
+        <img src="/interactive-card-details-form-main/images/bg-card-front.png" alt="">
+          
+      </div>
+      <div class="card-back">
+        <img src="/interactive-card-details-form-main/images/bg-card-back.png" alt="">
+      </div>
+    </section>
+    <form>
+      <div class="card-info">
+        <div class="card-holder">
+          <label for="card-holder">cardholder name:</label>
+          <input type="text" placeholder="e.g. Jane Applessed">
+        </div>
+        <div class="card-number">
+          <label for="card-number">card number</label>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000">
+        </div>
+        <div class="card-exp-num-cvc">
+          <div class="exp-num">
+            <label for="exp-num">exp. date(mm/yy)</label>
+            <div class="month-year">
+              <input type="text" placeholder="mm">
+              <input type="text" placeholder="yy">
+            </div>
+            </div>
+          <div class="cvc-num">
+            <label for="cvc-num">cvc</label>
+            <input type="text" placeholder="e.g. 123">
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
+
+<!--
+  0000 0000 0000 0000
+  Jane Appleseed
+  00/00
+
+  000
+
+  Cardholder Name
+  e.g. Jane Appleseed
+
+  Card Number
+  e.g. 1234 5678 9123 0000
+
+  Exp. Date (MM/YY)
+  MM
+  YY
+
+  CVC
+  e.g. 123
+
+  Confirm
+
+  Completed state start 
+
+  Thank you!
+  We've added your card details
+  Continue
+  -->
