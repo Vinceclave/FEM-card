@@ -14,66 +14,37 @@
   <main>
     <section class="banner">
       <div class="card-top">
-        <img src="./images/bg-card-front.png" alt="">
+        <img src="/images/bg-card-front.png" alt="">
       </div>
       <div class="card-back">
-        <img src="./images/bg-card-back.png" alt="">
+        <img src="/images/bg-card-back.png" alt="">
       </div>
     </section>
-    <form>
-      <div class="card-info">
-        <div class="card-holder">
-          <label for="card-holder">cardholder name:</label>
-          <input type="text" placeholder="e.g. Jane Applessed">
+    <section class="card-info">
+      <form>
+        <div class="card-holder-name">
+          <label for="card-holder">Cardholder Name</label>
+          <input type="text" id="card-holder" name="card-holder" / placeholder="e.g. Jane Apleassed">
         </div>
         <div class="card-number">
-          <label for="card-number">card number</label>
-          <input type="text" placeholder="e.g. 1234 5678 9123 0000">
+          <label for="card-number">Card Number:</label>
+          <input type="text" id="card-number" name="card-number" placeholder="e.g. 1234 5678 9123 0000"/>
         </div>
-        <div class="card-exp-num-cvc">
-          <div class="exp-num">
-            <label for="exp-num">exp. date(mm/yy)</label>
-            <div class="month-year">
-              <input type="text" placeholder="mm">
-              <input type="text" placeholder="yy">
-            </div>
-            </div>
-          <div class="cvc-num">
-            <label for="cvc-num">cvc</label>
-            <input type="text" placeholder="e.g. 123">
+        <div class="exp-date_security-code">
+          <div class="expiration-date">
+            <label for="expiration-date">exp. date (mm/yy)</label>
+            <input type="text" id="month" name="expiration-date" placeholder="mm"/>
+            <input type="text" id="year" name="expiration-date" placeholder="yy"/>
+          </div>
+          <div class="security-code">
+            <label for="security-code">Security Code:</label>
+            <input type="text" id="security-code" name="security-code" placeholder="e.g 123"/>
           </div>
         </div>
-      </div>
-    </form>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
   </main>
 </body>
 </html>
 
-<!--
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  Completed state start 
-
-  Thank you!
-  We've added your card details
-  Continue
-  -->

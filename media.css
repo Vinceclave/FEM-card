@@ -1,33 +1,82 @@
-@media (max-width: 48em) {
-    .banner .card-top,
-    .banner .card-back {
-    width: clamp(15em, 70%, 25em);
+@media (max-width: 49em) {
+    main  {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.2fr 3fr;
     }
     
-    .banner {
-        grid-column: 1/5;
-        padding: 4em;
-    }
-    
-    form {
-        grid-column: 1/4;
-        grid-row: 2/4;
-    }
 
     .card-top {
-        position: absolute;
+        position: relative;
+        bottom: -50%;
+        left: 20%;
         z-index: 1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-60%, 5%);
     }
-
     
+    @keyframes slideleft {
+        0% { 
+            transform: translate(-300px, -5%);
+            opacity: 0;
+        }
+        
+        100% {
+            transform: translate(-20%, 5%);
+            opacity: 1;
+        }
+    }
 
     .card-back {
-        position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-40%, -50%);
+        right: 20%;
     }
-}
+    
+    @keyframes slideright {
+        0% { 
+            transform: translate(300px, -100%);
+            opacity: 0;
+        }
+        
+        100% {
+            transform: translate(20%, -50%);
+            opacity: 1;
+        }
+    }
+    
+    
+    .banner {
+        position: relative;
+        width: 100%;
+        background: url(/images/bg-main-mobile.png) no-repeat center/cover ;
+        grid-column: 1/5;
+        padding: 1em;
+    }
+
+        
+    .banner .card-top,
+    .banner .card-back {
+        width: clamp(15em, 70%, 25em);
+    }
+
+    .card-info {
+        grid-column: 1/4;
+        grid-row: 2/9;
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }  
+    form {
+        padding: 2em 0;
+    }
+ }
+
+ @media only screen and (max-width: 299px) {
+    body {
+        min-width: 299px;
+    }
+
+    .banner .card-top,
+    .banner .card-back {
+        width: clamp(15em, 70%, 25em);
+    }
+    
+ }

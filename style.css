@@ -21,112 +21,135 @@
     text-transform: uppercase;
 }
 
- body {
-    width: 100%;
-    display: grid;
+body {
+    overflow: hidden;
 }
 main {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1.2fr 3fr;
-    overflow-x: hidden;
+
 }
+
+.card-top img,
+.card-back img {
+    width: 100%;
+}
+
 
 .banner {
     position: relative;
-    background-image: url(./images/bg-main-desktop.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.banner .card-top,
-.banner .card-back {
-    width: clamp(17em, 100%, 25em);
-}
-
-.card-top img, 
-.card-back img  {
-    width: 100%;
+    background: url(/images/bg-main-desktop.png) no-repeat center/cover;
 }
 
 .card-top {
-    position: absolute; 
-    top: 30%;
-    left: 33%;
-    transform: translate(-10%, -20%);
+    position: absolute;
+    bottom: 50%;
+    left: -10%;
+    opacity: 0;
+    animation: slideleft 2000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 300ms;
 }
-
+@keyframes slideleft {
+    0% { 
+        transform: translate(-300px, 10%);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translate(25%, -10%);
+        opacity: 1;
+    }
+}
 
 .card-back {
     position: absolute;
-    right: -50%;
-    top: 40%;
-    transform: translate(-10%, 40%);
-}
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 50%;
+    right: -15%;
+    opacity: 0;
+    animation: slideright 2000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 500ms;
 }
 
+@keyframes slideright {
+    0% { 
+        transform: translate(300px, -10%);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translate(10%, 10%);
+        opacity: 1;
+    }
+}
 
 .card-info {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    width: clamp(10em, 100%, 20em);
+    justify-content: center;
+    align-items: center;
 }
 
-.card-info label, 
-.card-exp-num-cvc label {
+form {
+    width: clamp(10em, calc(100% - 3em), 25em);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    margin: 0 1.5em;
+
+}
+
+.card-holder-name label,
+.card-number label,
+.expiration-date label,
+.security-code label {
+    display: block;
+}
+
+.card-holder-name input,
+.card-number input,
+.expiration-date input {
+    width: 100%;
+}
+
+.card-holder-name input,
+.card-number input,
+.expiration-date input,
+.security-code input {
+    border: 0.1em solid var(--light-grayish-violet);
+    border-radius: 0.5em;
+}
+
+.card-holder-name label,
+.card-number label,
+.expiration-date label,
+.security-code label {
+    color: var(--very-dark-violet);
     margin-bottom: 0.5em;
 }
-.card-holder, .card-number {
-    display: flex;
-    flex-direction: column;
+
+.card-holder-name input,
+.card-number input,
+.expiration-date input,
+.security-code input {
+     padding: 0.5em;
+ }
+.expiration-date input {
+    width: 50px;
 }
 
-.card-holder input, .card-number input {
-    padding: 0.5em 1em;
-    border: 0.1em solid var(--light-grayish-violet);
-    color: var(--very-dark-violet-grayish-violet);
-    border-radius: 0.5em;
+.security-code input {
+    width: 80px;
 }
-.card-exp-num-cvc {
+
+.exp-date_security-code {
     display: flex;
     justify-content: space-between;
-    gap: 1em;
-}
-.exp-num,.cvc-num {
-    display: flex;
-    flex-direction: column;
 }
 
-.exp-num input {
-    width: 70px;
-}
-
-.exp-num > input:nth-child(2) {
-    margin-right: 1 em;
-}
-
-.exp-num > input:nth-child(2),
-.exp-num > input:nth-child(3) {
-    display: inline-block;
-}
-
-.cvc-num input {
-    width: 100px;
-}
-.exp-num input,
-.cvc-num input {
-    padding: 0.5em 1em;
-    border: 0.1em solid var(--light-grayish-violet);
-    color: var(--very-dark-violet-grayish-violet);
+form button {
+    cursor: pointer;
+    color: var(--light-grayish-violet);
+    background: var(--very-dark-violet);
+    padding: 1em;
     border-radius: 0.5em;
-}
-
-::placeholder {
-    text-transform: lowercase;
 }
