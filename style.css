@@ -23,6 +23,10 @@
     text-transform: uppercase;
 }
 
+body {
+  background: var(--white);
+}
+
 /* styling main element */
 main {
     min-height: 100vh;
