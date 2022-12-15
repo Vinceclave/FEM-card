@@ -1,7 +1,8 @@
+/* importing a font-family: 'Space Grotesk', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
+/* customizing styling element's name using root */
 :root {
-    
     --white: hsl(0, 0%, 100%);
     --light-grayish-violet: hsl(270, 3%, 87%); 
     --dark-grayish-violet: hsl(279, 6%, 55%);
@@ -11,6 +12,7 @@
     --erro-input: hsl(0, 100%, 66%);
 }
 
+/* this can reset all default key values of html element */ 
 * {
     margin: 0;
     padding: 0;
@@ -21,31 +23,120 @@
     text-transform: uppercase;
 }
 
+/* styling main element */
 main {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 0.9fr 3fr;
     overflow-x: hidden;
 }
+ /* styling banner */
+    .banner {
+        position: relative;
+        background: url(./images/bg-main-desktop.png) no-repeat center/cover;
+    }
 
-.card-top img,
-.card-back img {
-    width: 100%;
-}
+/* making our images dependant to it's parent */
+    .card-top img,
+    .card-back img {
+        width: 100%;
+    }
+    
+    .card-top {
+        position: absolute;
+        bottom: 50%;
+        left: -5%;
+        opacity: 0;
+        animation: slideleft 2000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 200ms;
+    }
+    
+    .card-back {
+        position: absolute;
+        top: 50%;
+        right: -15%;
+        opacity: 0;
+        animation: slideright 2000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 300ms;
+    }
+/* banner styling end */
+
+/* designing our form element */
+    form {
+    width: clamp(10em, calc(100% - 3em), 25em);
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+        gap: 1.5em;
+        margin: 0 1.5em;
+        
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
 
-.banner {
-    position: relative;
-    background: url(./images/bg-main-desktop.png) no-repeat center/cover;
-}
+    .card-holder-name label,
+    .card-number label,
+    .expiration-date label,
+    .security-code label {
+        display: block;
+    }
 
-.card-top {
-    position: absolute;
-    bottom: 50%;
-    left: -5%;
-    opacity: 0;
-    animation: slideleft 2000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 200ms;
-}
+    .card-holder-name input,
+    .card-number input,
+    .expiration-date input {
+        width: 100%;
+    }
+
+    .card-holder-name input,
+    .card-number input,
+    .expiration-date input,
+    .security-code input {
+        border: 0.1em solid var(--light-grayish-violet);
+        border-radius: 0.5em;
+    }
+
+    .card-holder-name label,
+    .card-number label,
+    .expiration-date label,
+    .security-code label {
+        color: var(--very-dark-violet);
+        margin-bottom: 0.5em;
+    }
+
+    .card-holder-name input,
+    .card-number input,
+    .expiration-date input,
+    .security-code input {
+        padding: 0.5em;
+    }
+    .expiration-date input {
+        width: 50px;
+    }
+
+    .security-code input {
+        width: 80px;
+    }
+
+    .exp-date_security-code {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    form button {
+        cursor: pointer;
+        color: var(--light-grayish-violet);
+        background: var(--very-dark-violet);
+        padding: 1em;
+        border-radius: 0.5em;
+    }
+
+/* form styling end */
+
+/* animating card front and back */
 @keyframes slideleft {
     0% { 
         transform: translate(-300px, 5%);
@@ -57,15 +148,6 @@ main {
         opacity: 1;
     }
 }
-
-.card-back {
-    position: absolute;
-    top: 50%;
-    right: -15%;
-    opacity: 0;
-    animation: slideright 2000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 300ms;
-}
-
 @keyframes slideright {
     0% { 
         transform: translate(300px, -10%);
@@ -76,77 +158,4 @@ main {
         transform: translate(30%, 10%);
         opacity: 1;
     }
-}
-
-.card-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-form {
-    width: clamp(10em, calc(100% - 3em), 25em);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5em;
-    margin: 0 1.5em;
-
-}
-
-.card-holder-name label,
-.card-number label,
-.expiration-date label,
-.security-code label {
-    display: block;
-}
-
-.card-holder-name input,
-.card-number input,
-.expiration-date input {
-    width: 100%;
-}
-
-.card-holder-name input,
-.card-number input,
-.expiration-date input,
-.security-code input {
-    border: 0.1em solid var(--light-grayish-violet);
-    border-radius: 0.5em;
-}
-
-.card-holder-name label,
-.card-number label,
-.expiration-date label,
-.security-code label {
-    color: var(--very-dark-violet);
-    margin-bottom: 0.5em;
-}
-
-.card-holder-name input,
-.card-number input,
-.expiration-date input,
-.security-code input {
-     padding: 0.5em;
- }
-.expiration-date input {
-    width: 50px;
-}
-
-.security-code input {
-    width: 80px;
-}
-
-.exp-date_security-code {
-    display: flex;
-    justify-content: space-between;
-}
-
-form button {
-    cursor: pointer;
-    color: var(--light-grayish-violet);
-    background: var(--very-dark-violet);
-    padding: 1em;
-    border-radius: 0.5em;
 }

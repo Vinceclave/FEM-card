@@ -1,10 +1,25 @@
+/* media query 768px styling */
+
 @media (max-width: 49em) {
     main  {
         grid-template-columns: 1fr;
         grid-template-rows: 1.2fr 3fr;
     }
     
-
+    .banner {
+        
+        position: relative;
+        width: 100%;
+        background: url(./images/bg-main-mobile.png) no-repeat center/cover ;
+        grid-column: 1/5;
+        padding: 1em;
+    }
+    
+    .banner .card-top,
+    .banner .card-back {
+        width: clamp(15em, 70%, 25em);
+    }
+    
     .card-top {
         position: relative;
         bottom: -50%;
@@ -12,6 +27,20 @@
         z-index: 1;
     }
     
+    form {
+        padding: 2em 0;
+    }
+    
+    .card-info {
+        grid-column: 1/4;
+        grid-row: 2/9;
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }  
+
+    /* adjusting animating keyframes our translate values */ 
     @keyframes slideleft {
         0% { 
             transform: translate(-300px, -5%);
@@ -23,7 +52,7 @@
             opacity: 1;
         }
     }
-
+    
     .card-back {
         top: 50%;
         right: 20%;
@@ -41,43 +70,19 @@
         }
     }
     
-    
-    .banner {
-        
-        position: relative;
-        width: 100%;
-        background: url(./images/bg-main-mobile.png) no-repeat center/cover ;
-        grid-column: 1/5;
-        padding: 1em;
-    }
+}
+/* media query 768px styling end */
 
-        
-    .banner .card-top,
-    .banner .card-back {
-        width: clamp(15em, 70%, 25em);
-    }
-
-    .card-info {
-        grid-column: 1/4;
-        grid-row: 2/9;
-        display: flex; 
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }  
-    form {
-        padding: 2em 0;
-    }
- }
-
- @media only screen and (max-width: 299px) {
+/* media query 299px styling */
+@media only screen and (max-width: 299px) {
     body {
         min-width: 299px;
     }
-
+    
     .banner .card-top,
     .banner .card-back {
         width: clamp(15em, 70%, 25em);
     }
     
- }
+}
+/* media query 299px styling end */
