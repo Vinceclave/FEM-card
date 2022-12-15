@@ -1,5 +1,13 @@
 /* media query 768px styling */
 
+@media (min-width: 50em) and (max-width:80em) {
+    main {
+        grid-template-columns: 1fr 2fr;
+    }
+    .banner {
+        transform: rotate(30deg) translate(-50%, -10%);
+    }
+}
 @media (max-width: 49em) {
     main  {
         grid-template-columns: 1fr;

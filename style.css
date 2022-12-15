@@ -34,6 +34,7 @@ main {
     .banner {
         position: relative;
         background: url(./images/bg-main-desktop.png) no-repeat center/cover;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
 /* making our images dependant to it's parent */
@@ -56,6 +57,48 @@ main {
         right: -15%;
         opacity: 0;
         animation: slideright 2000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards 300ms;
+    }
+
+    .card-logo {
+        position: absolute;
+        top: 1em;
+        left: 1em;
+    }
+
+    .card-num {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+    
+    .card-name {
+        position: absolute;
+        bottom: 2.5em;
+        left: 2em
+    }
+
+    .card-expiry {
+        position: absolute;
+        bottom: 2.5em;
+        right: 2em;
+    }
+    
+    .card-code {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-right: 3em;
+        transform: translateY(-65%);
+    }
+
+    .card-num p {
+        font-size: 1.3em;
+        white-space: nowrap;
+    }
+
+    .card-info img {
+        width: 100%;
     }
 /* banner styling end */
 
