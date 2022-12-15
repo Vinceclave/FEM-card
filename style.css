@@ -35,6 +35,7 @@ main {
         position: relative;
         background: url(./images/bg-main-desktop.png) no-repeat center/cover;
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        box-shadow: 0 0  1em 0.5em var(--very-dark-violet);
     }
 
 /* making our images dependant to it's parent */
@@ -43,6 +44,12 @@ main {
         width: 100%;
     }
     
+    .card-top img {
+        filter: drop-shadow(2px 2px 3px var(--very-dark-violet));
+    }
+    .card-back img {
+        filter: drop-shadow(2px 2px 3px var(--dark-grayish-violet));
+    }
     .card-top {
         position: absolute;
         bottom: 50%;
@@ -65,11 +72,18 @@ main {
         left: 1em;
     }
 
+    .card-num,
+    .card-name,
+    .card-expiry,
+    .card-code {
+        color: var(--light-grayish-violet);
+    }
+
     .card-num {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -10%);
+        transform: translate(-50%, -50%);
     }
     
     .card-name {

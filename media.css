@@ -34,6 +34,10 @@
         left: 20%;
         z-index: 1;
     }
+
+    .card-back img {
+        filter: drop-shadow(2px 2px 3px var(--very-dark-violet));
+    }
     
     form {
         padding: 4em 0;
