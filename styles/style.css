@@ -39,7 +39,7 @@ main {
 
 .banner {
     position: relative;
-    background: url(/images/bg-main-desktop.png) no-repeat center/cover;
+    background: url(./images/bg-main-desktop.png) no-repeat center/cover;
 }
 
 .card-top {
